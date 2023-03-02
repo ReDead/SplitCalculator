@@ -35,10 +35,14 @@ document.getElementById('button').onclick = function() {
 
    total_seconds = (minutes * 60) + seconds
    lap_time = total_seconds / laps
-   lapTimeStr = Math.floor(lap_time / 60) + ':' + (lap_time % 60).toFixed(2)
+   if(lap_time>=100) {
+      lapTimeStr = Math.floor(lap_time / 60) + ':' + (lap_time % 60).toFixed(2)
+   } else {
+      lapTimeStr = lap_time.toFixed(2)
+   }
 
    mileTime = total_seconds / miles
-   mileTimeStr = Math.floor(mileTime / 60) + ':' + (mileTime % 60).toFixed(2)
+   mileTimeStr = Math.floor(mileTime / 60) + ':' + Math.round(mileTime % 60)
 
    split400Output.innerHTML = lapTimeStr
    milePaceOutput.innerHTML = mileTimeStr
