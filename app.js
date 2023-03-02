@@ -36,13 +36,21 @@ document.getElementById('button').onclick = function() {
    total_seconds = (minutes * 60) + seconds
    lap_time = total_seconds / laps
    if(lap_time>=100) {
+      if((lap_time % 60).toFixed(2) < 10){
+         lapTimeStr = Math.floor(lap_time / 60) + ':0' + (lap_time % 60).toFixed(2)
+      } else {
       lapTimeStr = Math.floor(lap_time / 60) + ':' + (lap_time % 60).toFixed(2)
+      }
    } else {
       lapTimeStr = lap_time.toFixed(2)
    }
 
    mileTime = total_seconds / miles
-   mileTimeStr = Math.floor(mileTime / 60) + ':' + Math.round(mileTime % 60)
+   if(Math.round(mileTime % 60) < 10){
+      mileTimeStr = Math.floor(mileTime / 60) + ':0' + Math.round(mileTime % 60)
+   } else {
+      mileTimeStr = Math.floor(mileTime / 60) + ':' + Math.round(mileTime % 60)
+   }
 
    split400Output.innerHTML = lapTimeStr
    milePaceOutput.innerHTML = mileTimeStr
