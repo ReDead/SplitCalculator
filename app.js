@@ -57,7 +57,11 @@ document.getElementById('button').onclick = function() {
    if(Math.round(mileTime % 60) < 10){
       mileTimeStr = Math.floor(mileTime / 60) + ':0' + Math.round(mileTime % 60)
    } else {
+      if(Math.round(mileTime % 60) == 60){
+         mileTimeStr = (Math.floor(mileTime / 60) + 1) + ':00'
+      } else {
       mileTimeStr = Math.floor(mileTime / 60) + ':' + Math.round(mileTime % 60)
+      }
    }
 
    target_time = mileTime * (target / 1600)
