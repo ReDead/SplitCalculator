@@ -60,7 +60,7 @@ document.getElementById('button').onclick = function() {
       mileTimeStr = Math.floor(mileTime / 60) + ':' + Math.round(mileTime % 60)
    }
 
-   target_time = total_seconds * (target / miles)
+   target_time = mileTime * (target / 1600)
    if(target_time>=100) {
       if((target_time % 60).toFixed(2) < 10){
          targetTimeStr = Math.floor(target_time / 60) + ':0' + (target_time % 60).toFixed(2)
