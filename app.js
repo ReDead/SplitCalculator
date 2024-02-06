@@ -30,15 +30,15 @@ document.getElementById('button').onclick = function() {
          invalid()
          return
       }
-      minutes = parseInt(times[0])
-      seconds = parseInt(times[1])
+      minutes = parseFloat(times[0])
+      seconds = parseFloat(times[1])
    } else {
       if(isNaN(time)) {
          invalid()
          return
       }
       minutes = 0
-      seconds = parseInt(time)
+      seconds = parseFloat(time)
    }
 
    total_seconds = (minutes * 60) + seconds
