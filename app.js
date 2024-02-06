@@ -64,7 +64,7 @@ document.getElementById('button').onclick = function() {
       }
    }
 
-   target_time = mileTime * (target / 1600)
+   target_time = total_seconds * (target / distance)
    if(target_time>=100) {
       if((target_time % 60).toFixed(2) < 10){
          targetTimeStr = Math.floor(target_time / 60) + ':0' + (target_time % 60).toFixed(2)
