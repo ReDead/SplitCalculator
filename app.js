@@ -66,13 +66,10 @@ document.getElementById('button').onclick = function() {
 
    target_time = total_seconds * (target / distance)
    if(target_time >= 100) {
-      if(Math.round(target_time % 60) < 10){
-         targetTimeStr = Math.floor(target_time / 60) + ':0' + Math.round(target_time % 60)
+      if((target_time % 60).toFixed(2) < 10){
+         targetTimeStr = Math.floor(target_time / 60) + ':0' + (target_time % 60).toFixed(2)
       } else {
-         if(Math.round(mileTime % 60) == 60){
-            targetTimeStr = (Math.floor(target_time / 60) + 1) + ':00'
-         } else {
-            targetTimeStr = Math.floor(target_time / 60) + ':' + Math.round(target_time % 60)
+         targetTimeStr = Math.floor(target_time / 60) + ':' + (target_time % 60).toFixed(2)
       }
    } else {
       targetTimeStr = target_time.toFixed(2)
